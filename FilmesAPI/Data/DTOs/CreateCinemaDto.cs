@@ -7,4 +7,6 @@ public class CreateCinemaDto
 {
     [Required(ErrorMessageResourceName = "NomeRequired", ErrorMessageResourceType = typeof(CinemaStrings))]
     public string Nome { get; set; }
+
+    public int EnderecoId { get; set; }
 }

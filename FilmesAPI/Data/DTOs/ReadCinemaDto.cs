@@ -8,4 +8,5 @@ public class ReadCinemaDto
 
     public ReadEnderecoDto Endereco { get; set; }
 
+    public ICollection<ReadSessaoDto> Sessoes { get; set; }
 }

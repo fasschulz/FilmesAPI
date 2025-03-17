@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace FilmesAPI.Models;
+﻿namespace FilmesAPI.Models;
 
 public class Sessao
 {           

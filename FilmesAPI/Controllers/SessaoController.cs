@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using FilmesAPI.Data.DTOs;
 using FilmesAPI.Data;
 using FilmesAPI.Models;
+using Microsoft.EntityFrameworkCore;
+using FilmesAPI.Profiles;
 
 namespace FilmesApi.Controllers
 {
@@ -25,8 +27,9 @@ namespace FilmesApi.Controllers
             Sessao sessao = _mapper.Map<Sessao>(dto);
             _context.Sessoes.Add(sessao);
             _context.SaveChanges();
+
             return CreatedAtAction(nameof(RecuperaSessoesPorId), 
-                new { filmeId = sessao.FilmeId, cinemaId = sessao.CinemaId }, sessao);
+                new { filmeId = sessao.FilmeId, cinemaId = sessao.CinemaId }, dto);
         }
 
         [HttpGet]

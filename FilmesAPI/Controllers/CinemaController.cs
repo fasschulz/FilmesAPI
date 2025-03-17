@@ -37,10 +37,9 @@ public class CinemaController : ControllerBase
     {
         if (enderecoId == null)
             return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.ToList());
-
-        //SQL Raw apenas para fins didaticos
+                
         return _mapper.Map<List<ReadCinemaDto>>(
-            _context.Cinemas.FromSqlRaw($"SELECT Id, Nome, EnderecoId FROM cinemas WHERE cinemas.EnderecoId = {enderecoId}")
+            _context.Cinemas.Where(cinema => cinema.EnderecoId == enderecoId)
             .ToList());
     }
 

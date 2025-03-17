@@ -18,5 +18,7 @@ public class Filme
 
     [Required(ErrorMessageResourceName = "DuracaoRequired", ErrorMessageResourceType = typeof(FilmeStrings))]
     [Range(70, 600, ErrorMessageResourceName = "DuracaoRange", ErrorMessageResourceType = typeof(FilmeStrings))]
-    public int Duracao { get; set; }    
+    public int Duracao { get; set; }
+
+    public virtual ICollection<Sessao> Sessoes { get; set; }
 }

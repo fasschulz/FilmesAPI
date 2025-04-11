@@ -7,3 +7,4 @@ Projeto de API de filmes com .NET 9
 - Validações com DataAnnotations
 - Resource strings para armazenar string de validação
 - Conexão com banco de dados MySQL
+- Aplicação em ambiente Docker
